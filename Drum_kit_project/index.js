@@ -1,16 +1,15 @@
-for (i = 0; i < document.querySelectorAll("button").length; i++) {
-    document.querySelectorAll("button")[i].addEventListener("click", function() {
+$("button").click(function() {
+    var buttonInnerHTML = this.innerHTML;
+    makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+});
 
-        var buttonInnerHTML = this.innerHTML;
-        makeSound(buttonInnerHTML)
-        buttonAnimation(buttonInnerHTML);
-    });
-}
 
-document.addEventListener("keydown", function(event) {
+$(document).keydown(function(event) {
     makeSound(event.key);
     buttonAnimation(event.key);
 });
+
 
 function makeSound(key) {
     switch (key) {
