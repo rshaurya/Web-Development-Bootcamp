@@ -2,23 +2,45 @@ var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
 
-// function nextSequence() {
+nextSequence();
 
-var randomNumber = Math.floor(Math.random() * 4);
+function nextSequence() {
 
-var randomChosenColour = buttonColours[randomNumber];
+    var randomNumber = Math.floor(Math.random() * 4);
 
-gamePattern.push(randomChosenColour);
+    var randomChosenColour = buttonColours[randomNumber];
 
-$(idOfElement).fadeIn(100).fadeOut(100).fadeIn(100);
+    gamePattern.push(randomChosenColour);
 
-var idOfElement = "#" + randomChosenColour;
+    var idOfElement = "#" + randomChosenColour;
 
-tmp = "#" + randomChosenColour;
-if (tmp === idOfElement) {
-    var audio = new Audio("sounds/yellow.mp3");
+    $(idOfElement).fadeIn(100).fadeOut(100).fadeIn(100);
+
+    var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
     audio.play();
+
 };
+
+
+
+// document.lastElementChild.lastElementChild.querySelector(idOfElement);
+
+
+
+// $(idOfElement).click(function() {
+
+//     var audio = new Audio("sounds/" + randomChosenColour + ".mp3");
+//     audio.play();
+// });
+
+
+
+
+// tmp = "#" + randomChosenColour;
+// if (tmp === idOfElement) {
+//     var audio = new Audio("sounds/yellow.mp3");
+//     audio.play();
+// }
 
 // };
 
