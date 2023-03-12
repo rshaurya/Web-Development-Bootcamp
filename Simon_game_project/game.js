@@ -15,15 +15,13 @@ $(document).keypress(function() {
         $("#level-title").text("Level  " + level);
         nextSequence();
         started = true;
-    }
+    };
 });
 
 $(".btn").click(function() {
 
     var userChosenColour = $(this).attr("id");
     userClickedPattern.push(userChosenColour);
-
-
     checkAnswer(userClickedPattern.length - 1);
 
     playSound(userChosenColour);
@@ -34,8 +32,7 @@ $(".btn").click(function() {
 function playSound(name) {
     var audio = new Audio("sounds/" + name + ".mp3");
     audio.play();
-}
-
+};
 
 function nextSequence() {
 
@@ -49,7 +46,6 @@ function nextSequence() {
 
     $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
-
 
 };
 
@@ -69,7 +65,7 @@ function checkAnswer(currentLevel) {
                 nextSequence();
                 userClickedPattern = [];
             }, 1000)
-        }
+        };
     } else {
         var audio = new Audio("sounds/wrong.mp3");
         audio.play();
@@ -84,9 +80,7 @@ function checkAnswer(currentLevel) {
         console.log(gamePattern);
         console.log(started);
 
-
-
-    }
+    };
 };
 
 
